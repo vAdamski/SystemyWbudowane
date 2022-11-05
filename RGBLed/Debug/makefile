@@ -60,8 +60,8 @@ all: main-build
 main-build: RGBLed.elf secondary-outputs
 
 # Tool invocations
-RGBLed.elf RGBLed.map: $(OBJS) $(USER_OBJS) C:\Users\adaml\Documents\STMRepo\RGBLed\STM32L496ZGTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "RGBLed.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\Users\adaml\Documents\STMRepo\RGBLed\STM32L496ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="RGBLed.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+RGBLed.elf RGBLed.map: $(OBJS) $(USER_OBJS) /Users/adamludwiczak/SystemyWbudowane/RGBLed/STM32L496ZGTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "RGBLed.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"/Users/adamludwiczak/SystemyWbudowane/RGBLed/STM32L496ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="RGBLed.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 

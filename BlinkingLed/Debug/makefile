@@ -60,8 +60,8 @@ all: main-build
 main-build: BlinkingLed.elf secondary-outputs
 
 # Tool invocations
-BlinkingLed.elf BlinkingLed.map: $(OBJS) $(USER_OBJS) C:\Users\adaml\Documents\STMRepo\BlinkingLed\STM32L496ZGTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "BlinkingLed.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\Users\adaml\Documents\STMRepo\BlinkingLed\STM32L496ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="BlinkingLed.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+BlinkingLed.elf BlinkingLed.map: $(OBJS) $(USER_OBJS) /Users/adamludwiczak/SystemyWbudowane/BlinkingLed/STM32L496ZGTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "BlinkingLed.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"/Users/adamludwiczak/SystemyWbudowane/BlinkingLed/STM32L496ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="BlinkingLed.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 

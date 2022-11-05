@@ -18,10 +18,13 @@
 /* USER CODE END Header */
 
 /* Includes ------------------------------------------------------------------*/
-#include "main.h"
+#include "stm32l4xx_hal.h"
+#include "stm32l4xx.h"
 #include "stm32l4xx_it.h"
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
+#include "kamami_l496_joy.h"
+#include "kamami_l496_led_rgb.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -31,7 +34,7 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
-
+#define JUMP 25
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -183,10 +186,80 @@ void PendSV_Handler(void)
 void SysTick_Handler(void)
 {
   /* USER CODE BEGIN SysTick_IRQn 0 */
-
   /* USER CODE END SysTick_IRQn 0 */
-  HAL_IncTick();
+	HAL_IncTick();
+	HAL_SYSTICK_IRQHandler();
   /* USER CODE BEGIN SysTick_IRQn 1 */
+	static uint8_t interrupt = 0;
+	static uint8_t _red, _green, _blue= 0;
+	static uint8_t _activeColor = 0;
+
+
+	if(++interrupt == 50) // we've counted 50 interrupts
+	{
+		interrupt = 0; // reset the interrupt counter
+		if (JOY_RIGHT_DOWN)
+			_blue++;
+		if (JOY_LEFT_DOWN)
+			_red++;
+		if (JOY_UP_DOWN)
+			_green++;
+		if (JOY_DOWN_DOWN)
+			_red = _green = _blue = 0;
+		led_rgb_set_intensity(_red, _green, _blue);
+	}
+
+//	if(++interrupt == 50)
+//	{
+//		interrupt = 0;
+//		//Zmiana kolorow
+//		if (JOY_RIGHT_DOWN)
+//		{
+//			_activeColor++;
+//			if(_activeColor >= 3) _activeColor = 0;
+//			HAL_Delay(100);
+//		}
+//		if (JOY_LEFT_DOWN)
+//		{
+//			_activeColor--;
+//			if(_activeColor <= 0) _activeColor = 2;
+//			HAL_Delay(100);
+//		}
+//
+//		if (JOY_UP_DOWN)
+//		{
+//			if (_activeColor == 0)
+//			{
+//				if (_red < 255) _red++;
+//			}
+//			if (_activeColor == 1)
+//			{
+//				if (_green < 255) _green++;
+//			}
+//			if (_activeColor == 2)
+//			{
+//				if (_blue < 255) _blue++;
+//			}
+//		}
+//		if (JOY_UP_DOWN)
+//		{
+//			if (_activeColor == 0)
+//			{
+//				if (_red > 0) _red--;
+//			}
+//			if (_activeColor == 1)
+//			{
+//				if (_green > 0) _green--;
+//			}
+//			if (_activeColor == 2)
+//			{
+//				if (_blue > 0) _blue--;
+//			}
+//		}
+//		if (JOY_OK_DOWN) _red = _green = _blue = 0;
+//
+//		led_rgb_set_intensity(_red, _green, _blue);
+//	}
 
   /* USER CODE END SysTick_IRQn 1 */
 }
