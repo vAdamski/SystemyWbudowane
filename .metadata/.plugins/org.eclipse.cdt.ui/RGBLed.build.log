@@ -1,0 +1,21 @@
+23:43:39 **** Incremental Build of configuration Debug for project RGBLed ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L496xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:74:2: warning: implicit declaration of function 'SysTick_Handler' [-Wimplicit-function-declaration]
+   74 |  SysTick_Handler();
+      |  ^~~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "RGBLed.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\adaml\Documents\STMRepo\RGBLed\STM32L496ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="RGBLed.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: RGBLed.elf
+ 
+arm-none-eabi-size   RGBLed.elf 
+arm-none-eabi-objdump -h -S  RGBLed.elf  > "RGBLed.list"
+   text	   data	    bss	    dec	    hex	filename
+   6180	     20	   1572	   7772	   1e5c	RGBLed.elf
+Finished building: default.size.stdout
+ 
+Finished building: RGBLed.list
+ 
+
+23:43:40 Build Finished. 0 errors, 1 warnings. (took 463ms)
+
