@@ -114,7 +114,7 @@ static void MX_TIM4_Init(void)
   TIM_MasterConfigTypeDef sMasterConfig;
 
   htim4.Instance = TIM4;
-  htim4.Init.Prescaler = HAL_RCC_GetHCLKFreq() / 400 / 256 - 1;
+  htim4.Init.Prescaler = HAL_RCC_GetHCLKFreq() / 10 / 256 - 1;
   htim4.Init.CounterMode = TIM_COUNTERMODE_UP;
   htim4.Init.Period = 255;
   htim4.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;

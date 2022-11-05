@@ -1,23 +1,21 @@
-17:22:57 **** Incremental Build of configuration Debug for project RGBLed ****
+17:50:38 **** Incremental Build of configuration Debug for project RGBLed ****
 make -j3 all 
-arm-none-eabi-gcc "../Core/Src/stm32l4xx_it.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L496xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/stm32l4xx_it.d" -MT"Core/Src/stm32l4xx_it.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32l4xx_it.o"
-../Core/Src/stm32l4xx_it.c: In function 'SysTick_Handler':
-../Core/Src/stm32l4xx_it.c:195:17: warning: unused variable '_activeColor' [-Wunused-variable]
-  195 |  static uint8_t _activeColor = 0;
-      |                 ^~~~~~~~~~~~
-At top level:
-../Core/Src/stm32l4xx_it.c:195:17: warning: '_activeColor' defined but not used [-Wunused-variable]
+arm-none-eabi-gcc "../Core/Src/kamami_l496_led_rgb.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L496xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/kamami_l496_led_rgb.d" -MT"Core/Src/kamami_l496_led_rgb.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/kamami_l496_led_rgb.o"
+../Core/Src/kamami_l496_led_rgb.c: In function 'MX_TIM4_Init':
+../Core/Src/kamami_l496_led_rgb.c:123:5: warning: implicit declaration of function '_Error_Handler' [-Wimplicit-function-declaration]
+  123 |     _Error_Handler(__FILE__, __LINE__);
+      |     ^~~~~~~~~~~~~~
 arm-none-eabi-gcc -o "RGBLed.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/adamludwiczak/SystemyWbudowane/RGBLed/STM32L496ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="RGBLed.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 Finished building target: RGBLed.elf
  
 arm-none-eabi-size   RGBLed.elf 
 arm-none-eabi-objdump -h -S  RGBLed.elf  > "RGBLed.list"
    text	   data	    bss	    dec	    hex	filename
-  11548	     20	   1676	  13244	   33bc	RGBLed.elf
+  11752	     24	   1680	  13456	   3490	RGBLed.elf
 Finished building: default.size.stdout
  
 Finished building: RGBLed.list
  
 
-17:22:59 Build Finished. 0 errors, 2 warnings. (took 2s.114ms)
+17:50:39 Build Finished. 0 errors, 1 warnings. (took 1s.75ms)
 
