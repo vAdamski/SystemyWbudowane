@@ -1,0 +1,6 @@
+../Core/Src/kamami_l496_led_rgb.c:20:6:led_rgb_init	16	static
+../Core/Src/kamami_l496_led_rgb.c:31:6:led_rgb_set_intensity	16	static
+../Core/Src/kamami_l496_led_rgb.c:38:6:HAL_TIM_Base_MspInit	24	static
+../Core/Src/kamami_l496_led_rgb.c:55:6:HAL_TIM_MspPostInit	40	static
+../Core/Src/kamami_l496_led_rgb.c:91:6:HAL_TIM_Base_MspDeInit	16	static
+../Core/Src/kamami_l496_led_rgb.c:110:13:MX_TIM4_Init	40	static

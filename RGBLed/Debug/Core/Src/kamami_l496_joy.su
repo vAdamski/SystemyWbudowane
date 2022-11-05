@@ -1,0 +1,4 @@
+../Core/Src/kamami_l496_joy.c:26:6:joy_init	32	static
+../Core/Src/kamami_l496_joy.c:44:10:joy_update	4	static
+../Core/Src/kamami_l496_joy.c:56:10:joy_get_state	4	static
+../Core/Src/kamami_l496_joy.c:61:10:joy_get_raw_state	4	static
