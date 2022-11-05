@@ -1989,3 +1989,6 @@ org.eclipse.core.runtime.CoreException: Project: RGBLed is closed or inaccessibl
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 !SUBENTRY 1 org.eclipse.cdt.core 4 0 2022-11-05 15:56:18.474
 !MESSAGE Project: RGBLed is closed or inaccessible!
+
+!ENTRY org.eclipse.cdt.core 1 0 2022-11-05 18:13:23.144
+!MESSAGE Indexed 'Zegar' (21 sources, 82 headers) in 5.19 sec: 5,707 declarations; 33,509 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.0051%)
