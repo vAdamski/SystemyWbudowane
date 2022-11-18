@@ -36,6 +36,7 @@
 #include "stm32l4xx_it.h"
 
 /* USER CODE BEGIN 0 */
+#include "kamami_l496_joy.h"
 #include "kamami_l496_7seg.h"
 /* USER CODE END 0 */
 
@@ -166,12 +167,60 @@ void PendSV_Handler(void)
 */
 void SysTick_Handler(void)
 {
-  /* USER CODE BEGIN SysTick_IRQn 0 */
+	/* USER CODE BEGIN SysTick_IRQn 0 */
 
-  /* USER CODE END SysTick_IRQn 0 */
-  HAL_IncTick();
-  HAL_SYSTICK_IRQHandler();
-  /* USER CODE BEGIN SysTick_IRQn 1 */
+	/* USER CODE END SysTick_IRQn 0 */
+	HAL_IncTick();
+	HAL_SYSTICK_IRQHandler();
+	/* USER CODE BEGIN SysTick_IRQn 1 */
+	static uint16_t mode = 0;
+	static uint16_t interrupt = 0;
+	static uint16_t hh=0;
+	static uint16_t mm=0;
+	static uint16_t ss=0;
+	static uint16_t peakSS = 0;
+
+	if(++interrupt == 1000)
+	{
+		interrupt = 0;
+		if (JOY_OK_DOWN && mode == 1)
+			{
+				mode = 0;
+			}
+			else if (JOY_OK_DOWN && mode == 0)
+			{
+				mode = 1;
+			}
+
+		if (mode == 0)
+		{
+			dis7seg_displayMMSS(mm, ss, peakSS);
+		}
+		if (mode == 1)
+		{
+			dis7seg_displayHHMM(hh, mm);
+		}
+
+		ss++;
+		peakSS = ss % 2;
+
+		if (ss == 60)
+		{
+			ss = 0;
+			mm++;
+		}
+		if (mm == 60)
+		{
+			mm = 0;
+			hh++;
+		}
+		if (hh == 24)
+		{
+			hh = 0;
+		}
+	}
+
+
 
   /* USER CODE END SysTick_IRQn 1 */
 }

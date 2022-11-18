@@ -42,6 +42,7 @@
 /* USER CODE BEGIN Includes */
 
 // header files for KAMeLeon peripherals used in this project
+#include "kamami_l496_joy.h"
 #include "kamami_l496_7seg.h"
 
 /* USER CODE END Includes */
@@ -55,7 +56,7 @@
 
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
-
+static void MX_GPIO_Init(void);
 /* USER CODE BEGIN PFP */
 /* Private function prototypes -----------------------------------------------*/
 
@@ -86,6 +87,7 @@ int main(void)
   /* USER CODE BEGIN SysInit */
 	
 	// initialize KAMeLeon peripherals used in this project
+	joy_init();
 	dis7seg_init();
     	
   /* USER CODE END SysInit */
@@ -101,11 +103,6 @@ int main(void)
   while (1)
   {
   /* USER CODE END WHILE */
-	static uint32_t hh=0;
-	static uint32_t mm=0;
-	static uint32_t ss=0;
-	dis7seg_display(x);
-	HAL_Delay(1000);
 
   /* USER CODE BEGIN 3 */
 

@@ -98,6 +98,44 @@ void dis7seg_init(void)
   HAL_NVIC_EnableIRQ(TIM2_IRQn); 
 }
 
+uint8_t dis7seg_displayHHMM(uint16_t HH, uint16_t MM)
+{
+	//Display HH
+	// 1 number
+	display[2] = segments[HH - (HH/10) * 10];
+	// 2 number
+	display[3] = segments[HH / 10];
+
+	display[2] |= SEG_DP_Pin;
+
+	//Display MM
+	// 1 number
+	display[0] = segments[MM - (MM/10) * 10];
+	// 2 number
+	display[1] = segments[MM / 10];
+
+	return 0;
+}
+
+uint8_t dis7seg_displayMMSS(uint16_t MM, uint16_t SS, uint16_t peak)
+{
+	//Display MM
+	// 1 number
+	display[2] = segments[MM - (MM/10) * 10];
+	// 2 number
+	display[3] = segments[MM / 10];
+
+	display[2] |= SEG_DP_Pin;
+
+	//Display SS
+	// 1 number
+	display[0] = segments[SS - (SS/10) * 10];
+	// 2 number
+	display[1] = segments[SS / 10];
+
+	return 0;
+}
+
 uint8_t dis7seg_display(uint16_t value)
 {
 	if(value > 9999)
