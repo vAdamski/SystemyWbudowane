@@ -1,468 +1,50 @@
-17:09:03 **** Incremental Build of configuration Debug for project RGBLed ****
+19:01:58 **** Incremental Build of configuration Debug for project Zegar ****
 make -j3 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L496xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Zegar.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/adamludwiczak/SystemyWbudowane/Zegar/STM32L496ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Zegar.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Zegar.elf
+ 
+arm-none-eabi-size   Zegar.elf 
+arm-none-eabi-objdump -h -S  Zegar.elf  > "Zegar.list"
+   text	   data	    bss	    dec	    hex	filename
+   8592	     12	   1644	  10248	   2808	Zegar.elf
+Finished building: default.size.stdout
+ 
+Finished building: Zegar.list
+ 
+19:02:33 **** Incremental Build of configuration Debug for project Zegar ****
+make -j3 all 
+arm-none-eabi-size   Zegar.elf 
+   text	   data	    bss	    dec	    hex	filename
+   8592	     12	   1644	  10248	   2808	Zegar.elf
+Finished building: default.size.stdout
+ 
+19:03:12 **** Incremental Build of configuration Debug for project Zegar ****
+make -j3 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L496xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
 arm-none-eabi-gcc "../Core/Src/stm32l4xx_it.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L496xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/stm32l4xx_it.d" -MT"Core/Src/stm32l4xx_it.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32l4xx_it.o"
-arm-none-eabi-gcc -o "RGBLed.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/adamludwiczak/SystemyWbudowane/RGBLed/STM32L496ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="RGBLed.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: RGBLed.elf
+arm-none-eabi-gcc -o "Zegar.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/adamludwiczak/SystemyWbudowane/Zegar/STM32L496ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Zegar.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Zegar.elf
  
-arm-none-eabi-size   RGBLed.elf 
-arm-none-eabi-objdump -h -S  RGBLed.elf  > "RGBLed.list"
+arm-none-eabi-size   Zegar.elf 
+arm-none-eabi-objdump -h -S  Zegar.elf  > "Zegar.list"
    text	   data	    bss	    dec	    hex	filename
-  11788	     20	   1684	  13492	   34b4	RGBLed.elf
+   8584	     12	   1644	  10240	   2800	Zegar.elf
 Finished building: default.size.stdout
  
-Finished building: RGBLed.list
+Finished building: Zegar.list
  
-17:09:06 **** Incremental Build of configuration Debug for project RGBLed ****
+19:03:40 **** Incremental Build of configuration Debug for project Zegar ****
 make -j3 all 
-arm-none-eabi-size   RGBLed.elf 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L496xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Zegar.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/adamludwiczak/SystemyWbudowane/Zegar/STM32L496ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Zegar.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Zegar.elf
+ 
+arm-none-eabi-size   Zegar.elf 
+arm-none-eabi-objdump -h -S  Zegar.elf  > "Zegar.list"
    text	   data	    bss	    dec	    hex	filename
-  11788	     20	   1684	  13492	   34b4	RGBLed.elf
+   8588	     12	   1644	  10244	   2804	Zegar.elf
 Finished building: default.size.stdout
  
-17:11:22 **** Incremental Build of configuration Debug for project RGBLed ****
-make -j3 all 
-arm-none-eabi-gcc "../Core/Src/stm32l4xx_it.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L496xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/stm32l4xx_it.d" -MT"Core/Src/stm32l4xx_it.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32l4xx_it.o"
-../Core/Src/stm32l4xx_it.c: In function 'SysTick_Handler':
-../Core/Src/stm32l4xx_it.c:198:7: error: 'div' undeclared (first use in this function)
-  198 |  if(++div == 50) // we've counted 50 interrupts
-      |       ^~~
-../Core/Src/stm32l4xx_it.c:198:7: note: each undeclared identifier is reported only once for each function it appears in
-../Core/Src/stm32l4xx_it.c:195:17: warning: unused variable '_activeColor' [-Wunused-variable]
-  195 |  static uint8_t _activeColor = 0;
-      |                 ^~~~~~~~~~~~
-../Core/Src/stm32l4xx_it.c:193:17: warning: unused variable 'interrupt' [-Wunused-variable]
-  193 |  static uint8_t interrupt = 0;
-      |                 ^~~~~~~~~
-At top level:
-../Core/Src/stm32l4xx_it.c:193:17: warning: 'interrupt' defined but not used [-Wunused-variable]
-../Core/Src/stm32l4xx_it.c:195:17: warning: '_activeColor' defined but not used [-Wunused-variable]
-  195 |  static uint8_t _activeColor = 0;
-      |                 ^~~~~~~~~~~~
-make: *** [Core/Src/subdir.mk:40: Core/Src/stm32l4xx_it.o] Error 1
-"make -j3 all" terminated with exit code 2. Build might be incomplete.
-17:11:40 **** Incremental Build of configuration Debug for project RGBLed ****
-make -j3 all 
-arm-none-eabi-gcc "../Core/Src/stm32l4xx_it.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L496xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/stm32l4xx_it.d" -MT"Core/Src/stm32l4xx_it.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32l4xx_it.o"
-../Core/Src/stm32l4xx_it.c: In function 'SysTick_Handler':
-../Core/Src/stm32l4xx_it.c:198:7: error: 'div' undeclared (first use in this function)
-  198 |  if(++div == 50) // we've counted 50 interrupts
-      |       ^~~
-../Core/Src/stm32l4xx_it.c:198:7: note: each undeclared identifier is reported only once for each function it appears in
-make: *** [Core/Src/subdir.mk:40: Core/Src/stm32l4xx_it.o] Error 1
-"make -j3 all" terminated with exit code 2. Build might be incomplete.
-17:11:56 **** Incremental Build of configuration Debug for project RGBLed ****
-make -j3 all 
-arm-none-eabi-gcc "../Core/Src/stm32l4xx_it.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L496xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/stm32l4xx_it.d" -MT"Core/Src/stm32l4xx_it.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32l4xx_it.o"
-arm-none-eabi-gcc -o "RGBLed.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/adamludwiczak/SystemyWbudowane/RGBLed/STM32L496ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="RGBLed.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: RGBLed.elf
- 
-arm-none-eabi-size   RGBLed.elf 
-arm-none-eabi-objdump -h -S  RGBLed.elf  > "RGBLed.list"
-   text	   data	    bss	    dec	    hex	filename
-  11548	     20	   1676	  13244	   33bc	RGBLed.elf
-Finished building: default.size.stdout
- 
-Finished building: RGBLed.list
- 
-17:12:58 **** Incremental Build of configuration Debug for project RGBLed ****
-make -j3 all 
-arm-none-eabi-gcc "../Core/Src/stm32l4xx_it.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L496xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/stm32l4xx_it.d" -MT"Core/Src/stm32l4xx_it.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32l4xx_it.o"
-../Core/Src/stm32l4xx_it.c: In function 'SysTick_Handler':
-../Core/Src/stm32l4xx_it.c:218:4: error: '_activeColor' undeclared (first use in this function)
-  218 |    _activeColor++;
-      |    ^~~~~~~~~~~~
-../Core/Src/stm32l4xx_it.c:218:4: note: each undeclared identifier is reported only once for each function it appears in
-make: *** [Core/Src/subdir.mk:40: Core/Src/stm32l4xx_it.o] Error 1
-"make -j3 all" terminated with exit code 2. Build might be incomplete.
-17:13:12 **** Incremental Build of configuration Debug for project RGBLed ****
-make -j3 all 
-arm-none-eabi-gcc "../Core/Src/stm32l4xx_it.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L496xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/stm32l4xx_it.d" -MT"Core/Src/stm32l4xx_it.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32l4xx_it.o"
-arm-none-eabi-gcc -o "RGBLed.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/adamludwiczak/SystemyWbudowane/RGBLed/STM32L496ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="RGBLed.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: RGBLed.elf
- 
-arm-none-eabi-size   RGBLed.elf 
-arm-none-eabi-objdump -h -S  RGBLed.elf  > "RGBLed.list"
-   text	   data	    bss	    dec	    hex	filename
-  11788	     20	   1684	  13492	   34b4	RGBLed.elf
-Finished building: default.size.stdout
- 
-Finished building: RGBLed.list
- 
-17:14:41 **** Incremental Build of configuration Debug for project RGBLed ****
-make -j3 all 
-arm-none-eabi-gcc "../Core/Src/stm32l4xx_it.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L496xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/stm32l4xx_it.d" -MT"Core/Src/stm32l4xx_it.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32l4xx_it.o"
-../Core/Src/stm32l4xx_it.c: In function 'SysTick_Handler':
-../Core/Src/stm32l4xx_it.c:195:17: warning: unused variable '_activeColor' [-Wunused-variable]
-  195 |  static uint8_t _activeColor = 0;
-      |                 ^~~~~~~~~~~~
-At top level:
-../Core/Src/stm32l4xx_it.c:195:17: warning: '_activeColor' defined but not used [-Wunused-variable]
-arm-none-eabi-gcc -o "RGBLed.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/adamludwiczak/SystemyWbudowane/RGBLed/STM32L496ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="RGBLed.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: RGBLed.elf
- 
-arm-none-eabi-size   RGBLed.elf 
-arm-none-eabi-objdump -h -S  RGBLed.elf  > "RGBLed.list"
-   text	   data	    bss	    dec	    hex	filename
-  11548	     20	   1676	  13244	   33bc	RGBLed.elf
-Finished building: default.size.stdout
- 
-Finished building: RGBLed.list
- 
-17:16:08 **** Incremental Build of configuration Debug for project RGBLed ****
-make -j3 all 
-arm-none-eabi-gcc "../Core/Src/stm32l4xx_it.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L496xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/stm32l4xx_it.d" -MT"Core/Src/stm32l4xx_it.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32l4xx_it.o"
-arm-none-eabi-gcc -o "RGBLed.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/adamludwiczak/SystemyWbudowane/RGBLed/STM32L496ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="RGBLed.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: RGBLed.elf
- 
-arm-none-eabi-size   RGBLed.elf 
-arm-none-eabi-objdump -h -S  RGBLed.elf  > "RGBLed.list"
-   text	   data	    bss	    dec	    hex	filename
-  11872	     20	   1684	  13576	   3508	RGBLed.elf
-Finished building: default.size.stdout
- 
-Finished building: RGBLed.list
- 
-17:16:36 **** Incremental Build of configuration Debug for project RGBLed ****
-make -j3 all 
-arm-none-eabi-gcc "../Core/Src/stm32l4xx_it.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L496xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/stm32l4xx_it.d" -MT"Core/Src/stm32l4xx_it.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32l4xx_it.o"
-arm-none-eabi-gcc -o "RGBLed.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/adamludwiczak/SystemyWbudowane/RGBLed/STM32L496ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="RGBLed.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: RGBLed.elf
- 
-arm-none-eabi-size   RGBLed.elf 
-arm-none-eabi-objdump -h -S  RGBLed.elf  > "RGBLed.list"
-   text	   data	    bss	    dec	    hex	filename
-  11876	     20	   1684	  13580	   350c	RGBLed.elf
-Finished building: default.size.stdout
- 
-Finished building: RGBLed.list
- 
-17:19:25 **** Incremental Build of configuration Debug for project RGBLed ****
-make -j3 all 
-arm-none-eabi-gcc "../Core/Src/stm32l4xx_it.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L496xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/stm32l4xx_it.d" -MT"Core/Src/stm32l4xx_it.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32l4xx_it.o"
-arm-none-eabi-gcc -o "RGBLed.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/adamludwiczak/SystemyWbudowane/RGBLed/STM32L496ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="RGBLed.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: RGBLed.elf
- 
-arm-none-eabi-size   RGBLed.elf 
-arm-none-eabi-objdump -h -S  RGBLed.elf  > "RGBLed.list"
-   text	   data	    bss	    dec	    hex	filename
-  11836	     20	   1684	  13540	   34e4	RGBLed.elf
-Finished building: default.size.stdout
- 
-Finished building: RGBLed.list
- 
-17:20:04 **** Incremental Build of configuration Debug for project RGBLed ****
-make -j3 all 
-arm-none-eabi-gcc "../Core/Src/stm32l4xx_it.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L496xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/stm32l4xx_it.d" -MT"Core/Src/stm32l4xx_it.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32l4xx_it.o"
-arm-none-eabi-gcc -o "RGBLed.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/adamludwiczak/SystemyWbudowane/RGBLed/STM32L496ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="RGBLed.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: RGBLed.elf
- 
-arm-none-eabi-size   RGBLed.elf 
-arm-none-eabi-objdump -h -S  RGBLed.elf  > "RGBLed.list"
-   text	   data	    bss	    dec	    hex	filename
-  11836	     20	   1684	  13540	   34e4	RGBLed.elf
-Finished building: default.size.stdout
- 
-Finished building: RGBLed.list
- 
-17:22:57 **** Incremental Build of configuration Debug for project RGBLed ****
-make -j3 all 
-arm-none-eabi-gcc "../Core/Src/stm32l4xx_it.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L496xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/stm32l4xx_it.d" -MT"Core/Src/stm32l4xx_it.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32l4xx_it.o"
-../Core/Src/stm32l4xx_it.c: In function 'SysTick_Handler':
-../Core/Src/stm32l4xx_it.c:195:17: warning: unused variable '_activeColor' [-Wunused-variable]
-  195 |  static uint8_t _activeColor = 0;
-      |                 ^~~~~~~~~~~~
-At top level:
-../Core/Src/stm32l4xx_it.c:195:17: warning: '_activeColor' defined but not used [-Wunused-variable]
-arm-none-eabi-gcc -o "RGBLed.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/adamludwiczak/SystemyWbudowane/RGBLed/STM32L496ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="RGBLed.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: RGBLed.elf
- 
-arm-none-eabi-size   RGBLed.elf 
-arm-none-eabi-objdump -h -S  RGBLed.elf  > "RGBLed.list"
-   text	   data	    bss	    dec	    hex	filename
-  11548	     20	   1676	  13244	   33bc	RGBLed.elf
-Finished building: default.size.stdout
- 
-Finished building: RGBLed.list
- 
-17:26:57 **** Incremental Build of configuration Debug for project RGBLed ****
-make -j3 all 
-arm-none-eabi-gcc "../Core/Src/stm32l4xx_it.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L496xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/stm32l4xx_it.d" -MT"Core/Src/stm32l4xx_it.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32l4xx_it.o"
-arm-none-eabi-gcc -o "RGBLed.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/adamludwiczak/SystemyWbudowane/RGBLed/STM32L496ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="RGBLed.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: RGBLed.elf
- 
-arm-none-eabi-size   RGBLed.elf 
-arm-none-eabi-objdump -h -S  RGBLed.elf  > "RGBLed.list"
-   text	   data	    bss	    dec	    hex	filename
-  11916	     20	   1684	  13620	   3534	RGBLed.elf
-Finished building: default.size.stdout
- 
-Finished building: RGBLed.list
- 
-17:27:33 **** Incremental Build of configuration Debug for project RGBLed ****
-make -j3 all 
-arm-none-eabi-gcc "../Core/Src/stm32l4xx_it.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L496xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/stm32l4xx_it.d" -MT"Core/Src/stm32l4xx_it.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32l4xx_it.o"
-arm-none-eabi-gcc -o "RGBLed.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/adamludwiczak/SystemyWbudowane/RGBLed/STM32L496ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="RGBLed.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: RGBLed.elf
- 
-arm-none-eabi-size   RGBLed.elf 
-arm-none-eabi-objdump -h -S  RGBLed.elf  > "RGBLed.list"
-   text	   data	    bss	    dec	    hex	filename
-  11916	     20	   1684	  13620	   3534	RGBLed.elf
-Finished building: default.size.stdout
- 
-Finished building: RGBLed.list
- 
-17:28:02 **** Incremental Build of configuration Debug for project RGBLed ****
-make -j3 all 
-arm-none-eabi-gcc "../Core/Src/stm32l4xx_it.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L496xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/stm32l4xx_it.d" -MT"Core/Src/stm32l4xx_it.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32l4xx_it.o"
-../Core/Src/stm32l4xx_it.c: In function 'SysTick_Handler':
-../Core/Src/stm32l4xx_it.c:195:17: warning: unused variable '_activeColor' [-Wunused-variable]
-  195 |  static uint8_t _activeColor = 0;
-      |                 ^~~~~~~~~~~~
-At top level:
-../Core/Src/stm32l4xx_it.c:195:17: warning: '_activeColor' defined but not used [-Wunused-variable]
-arm-none-eabi-gcc -o "RGBLed.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/adamludwiczak/SystemyWbudowane/RGBLed/STM32L496ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="RGBLed.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: RGBLed.elf
- 
-arm-none-eabi-size   RGBLed.elf 
-arm-none-eabi-objdump -h -S  RGBLed.elf  > "RGBLed.list"
-   text	   data	    bss	    dec	    hex	filename
-  11548	     20	   1676	  13244	   33bc	RGBLed.elf
-Finished building: default.size.stdout
- 
-Finished building: RGBLed.list
- 
-17:29:20 **** Incremental Build of configuration Debug for project RGBLed ****
-make -j3 all 
-arm-none-eabi-gcc "../Core/Src/stm32l4xx_it.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L496xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/stm32l4xx_it.d" -MT"Core/Src/stm32l4xx_it.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32l4xx_it.o"
-arm-none-eabi-gcc -o "RGBLed.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/adamludwiczak/SystemyWbudowane/RGBLed/STM32L496ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="RGBLed.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: RGBLed.elf
- 
-arm-none-eabi-size   RGBLed.elf 
-arm-none-eabi-objdump -h -S  RGBLed.elf  > "RGBLed.list"
-   text	   data	    bss	    dec	    hex	filename
-  11580	     20	   1684	  13284	   33e4	RGBLed.elf
-Finished building: default.size.stdout
- 
-Finished building: RGBLed.list
- 
-17:30:02 **** Incremental Build of configuration Debug for project RGBLed ****
-make -j3 all 
-arm-none-eabi-gcc "../Core/Src/stm32l4xx_it.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L496xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/stm32l4xx_it.d" -MT"Core/Src/stm32l4xx_it.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32l4xx_it.o"
-arm-none-eabi-gcc -o "RGBLed.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/adamludwiczak/SystemyWbudowane/RGBLed/STM32L496ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="RGBLed.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: RGBLed.elf
- 
-arm-none-eabi-size   RGBLed.elf 
-arm-none-eabi-objdump -h -S  RGBLed.elf  > "RGBLed.list"
-   text	   data	    bss	    dec	    hex	filename
-  11528	     20	   1684	  13232	   33b0	RGBLed.elf
-Finished building: default.size.stdout
- 
-Finished building: RGBLed.list
- 
-17:30:47 **** Incremental Build of configuration Debug for project RGBLed ****
-make -j3 all 
-arm-none-eabi-gcc "../Core/Src/stm32l4xx_it.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L496xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/stm32l4xx_it.d" -MT"Core/Src/stm32l4xx_it.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32l4xx_it.o"
-arm-none-eabi-gcc -o "RGBLed.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/adamludwiczak/SystemyWbudowane/RGBLed/STM32L496ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="RGBLed.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: RGBLed.elf
- 
-arm-none-eabi-size   RGBLed.elf 
-arm-none-eabi-objdump -h -S  RGBLed.elf  > "RGBLed.list"
-   text	   data	    bss	    dec	    hex	filename
-  11624	     20	   1684	  13328	   3410	RGBLed.elf
-Finished building: default.size.stdout
- 
-Finished building: RGBLed.list
- 
-17:31:12 **** Incremental Build of configuration Debug for project RGBLed ****
-make -j3 all 
-arm-none-eabi-gcc "../Core/Src/stm32l4xx_it.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L496xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/stm32l4xx_it.d" -MT"Core/Src/stm32l4xx_it.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32l4xx_it.o"
-arm-none-eabi-gcc -o "RGBLed.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/adamludwiczak/SystemyWbudowane/RGBLed/STM32L496ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="RGBLed.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: RGBLed.elf
- 
-arm-none-eabi-size   RGBLed.elf 
-arm-none-eabi-objdump -h -S  RGBLed.elf  > "RGBLed.list"
-   text	   data	    bss	    dec	    hex	filename
-  11624	     20	   1684	  13328	   3410	RGBLed.elf
-Finished building: default.size.stdout
- 
-Finished building: RGBLed.list
- 
-17:31:38 **** Incremental Build of configuration Debug for project RGBLed ****
-make -j3 all 
-arm-none-eabi-gcc "../Core/Src/stm32l4xx_it.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L496xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/stm32l4xx_it.d" -MT"Core/Src/stm32l4xx_it.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32l4xx_it.o"
-arm-none-eabi-gcc -o "RGBLed.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/adamludwiczak/SystemyWbudowane/RGBLed/STM32L496ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="RGBLed.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: RGBLed.elf
- 
-arm-none-eabi-size   RGBLed.elf 
-arm-none-eabi-objdump -h -S  RGBLed.elf  > "RGBLed.list"
-   text	   data	    bss	    dec	    hex	filename
-  11660	     20	   1684	  13364	   3434	RGBLed.elf
-Finished building: default.size.stdout
- 
-Finished building: RGBLed.list
- 
-17:32:45 **** Incremental Build of configuration Debug for project RGBLed ****
-make -j3 all 
-arm-none-eabi-gcc "../Core/Src/stm32l4xx_it.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L496xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/stm32l4xx_it.d" -MT"Core/Src/stm32l4xx_it.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32l4xx_it.o"
-arm-none-eabi-gcc -o "RGBLed.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/adamludwiczak/SystemyWbudowane/RGBLed/STM32L496ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="RGBLed.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: RGBLed.elf
- 
-arm-none-eabi-size   RGBLed.elf 
-arm-none-eabi-objdump -h -S  RGBLed.elf  > "RGBLed.list"
-   text	   data	    bss	    dec	    hex	filename
-  11752	     20	   1684	  13456	   3490	RGBLed.elf
-Finished building: default.size.stdout
- 
-Finished building: RGBLed.list
- 
-17:33:31 **** Incremental Build of configuration Debug for project RGBLed ****
-make -j3 all 
-arm-none-eabi-gcc "../Core/Src/stm32l4xx_it.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L496xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/stm32l4xx_it.d" -MT"Core/Src/stm32l4xx_it.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32l4xx_it.o"
-arm-none-eabi-gcc -o "RGBLed.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/adamludwiczak/SystemyWbudowane/RGBLed/STM32L496ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="RGBLed.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: RGBLed.elf
- 
-arm-none-eabi-size   RGBLed.elf 
-arm-none-eabi-objdump -h -S  RGBLed.elf  > "RGBLed.list"
-   text	   data	    bss	    dec	    hex	filename
-  11840	     20	   1684	  13544	   34e8	RGBLed.elf
-Finished building: default.size.stdout
- 
-Finished building: RGBLed.list
- 
-17:35:37 **** Incremental Build of configuration Debug for project RGBLed ****
-make -j3 all 
-arm-none-eabi-gcc "../Core/Src/stm32l4xx_it.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L496xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/stm32l4xx_it.d" -MT"Core/Src/stm32l4xx_it.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32l4xx_it.o"
-arm-none-eabi-gcc -o "RGBLed.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/adamludwiczak/SystemyWbudowane/RGBLed/STM32L496ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="RGBLed.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: RGBLed.elf
- 
-arm-none-eabi-size   RGBLed.elf 
-arm-none-eabi-objdump -h -S  RGBLed.elf  > "RGBLed.list"
-   text	   data	    bss	    dec	    hex	filename
-  11832	     20	   1684	  13536	   34e0	RGBLed.elf
-Finished building: default.size.stdout
- 
-Finished building: RGBLed.list
- 
-17:36:28 **** Incremental Build of configuration Debug for project RGBLed ****
-make -j3 all 
-arm-none-eabi-gcc "../Core/Src/stm32l4xx_it.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L496xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/stm32l4xx_it.d" -MT"Core/Src/stm32l4xx_it.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32l4xx_it.o"
-arm-none-eabi-gcc -o "RGBLed.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/adamludwiczak/SystemyWbudowane/RGBLed/STM32L496ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="RGBLed.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: RGBLed.elf
- 
-arm-none-eabi-size   RGBLed.elf 
-arm-none-eabi-objdump -h -S  RGBLed.elf  > "RGBLed.list"
-   text	   data	    bss	    dec	    hex	filename
-  11752	     20	   1684	  13456	   3490	RGBLed.elf
-Finished building: default.size.stdout
- 
-Finished building: RGBLed.list
- 
-17:39:19 **** Incremental Build of configuration Debug for project RGBLed ****
-make -j3 all 
-arm-none-eabi-gcc "../Core/Src/kamami_l496_led_rgb.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L496xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/kamami_l496_led_rgb.d" -MT"Core/Src/kamami_l496_led_rgb.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/kamami_l496_led_rgb.o"
-../Core/Src/kamami_l496_led_rgb.c: In function 'MX_TIM4_Init':
-../Core/Src/kamami_l496_led_rgb.c:123:5: warning: implicit declaration of function '_Error_Handler' [-Wimplicit-function-declaration]
-  123 |     _Error_Handler(__FILE__, __LINE__);
-      |     ^~~~~~~~~~~~~~
-arm-none-eabi-gcc -o "RGBLed.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/adamludwiczak/SystemyWbudowane/RGBLed/STM32L496ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="RGBLed.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: RGBLed.elf
- 
-arm-none-eabi-size   RGBLed.elf 
-arm-none-eabi-objdump -h -S  RGBLed.elf  > "RGBLed.list"
-   text	   data	    bss	    dec	    hex	filename
-  11752	     20	   1684	  13456	   3490	RGBLed.elf
-Finished building: default.size.stdout
- 
-Finished building: RGBLed.list
- 
-17:41:55 **** Incremental Build of configuration Debug for project RGBLed ****
-make -j3 all 
-arm-none-eabi-size   RGBLed.elf 
-   text	   data	    bss	    dec	    hex	filename
-  11752	     20	   1684	  13456	   3490	RGBLed.elf
-Finished building: default.size.stdout
- 
-17:44:45 **** Incremental Build of configuration Debug for project RGBLed ****
-make -j3 all 
-arm-none-eabi-gcc "../Core/Src/stm32l4xx_it.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L496xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/stm32l4xx_it.d" -MT"Core/Src/stm32l4xx_it.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32l4xx_it.o"
-arm-none-eabi-gcc -o "RGBLed.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/adamludwiczak/SystemyWbudowane/RGBLed/STM32L496ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="RGBLed.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: RGBLed.elf
- 
-arm-none-eabi-size   RGBLed.elf 
-arm-none-eabi-objdump -h -S  RGBLed.elf  > "RGBLed.list"
-   text	   data	    bss	    dec	    hex	filename
-  11752	     24	   1680	  13456	   3490	RGBLed.elf
-Finished building: default.size.stdout
- 
-Finished building: RGBLed.list
- 
-17:45:21 **** Incremental Build of configuration Debug for project RGBLed ****
-make -j3 all 
-arm-none-eabi-gcc "../Core/Src/stm32l4xx_it.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L496xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/stm32l4xx_it.d" -MT"Core/Src/stm32l4xx_it.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32l4xx_it.o"
-arm-none-eabi-gcc -o "RGBLed.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/adamludwiczak/SystemyWbudowane/RGBLed/STM32L496ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="RGBLed.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: RGBLed.elf
- 
-arm-none-eabi-size   RGBLed.elf 
-arm-none-eabi-objdump -h -S  RGBLed.elf  > "RGBLed.list"
-   text	   data	    bss	    dec	    hex	filename
-  11752	     24	   1680	  13456	   3490	RGBLed.elf
-Finished building: default.size.stdout
- 
-Finished building: RGBLed.list
- 
-17:47:32 **** Incremental Build of configuration Debug for project RGBLed ****
-make -j3 all 
-arm-none-eabi-gcc "../Core/Src/kamami_l496_led_rgb.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L496xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/kamami_l496_led_rgb.d" -MT"Core/Src/kamami_l496_led_rgb.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/kamami_l496_led_rgb.o"
-../Core/Src/kamami_l496_led_rgb.c: In function 'MX_TIM4_Init':
-../Core/Src/kamami_l496_led_rgb.c:123:5: warning: implicit declaration of function '_Error_Handler' [-Wimplicit-function-declaration]
-  123 |     _Error_Handler(__FILE__, __LINE__);
-      |     ^~~~~~~~~~~~~~
-arm-none-eabi-gcc -o "RGBLed.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/adamludwiczak/SystemyWbudowane/RGBLed/STM32L496ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="RGBLed.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: RGBLed.elf
- 
-arm-none-eabi-size   RGBLed.elf 
-arm-none-eabi-objdump -h -S  RGBLed.elf  > "RGBLed.list"
-   text	   data	    bss	    dec	    hex	filename
-  11752	     24	   1680	  13456	   3490	RGBLed.elf
-Finished building: default.size.stdout
- 
-Finished building: RGBLed.list
- 
-17:50:23 **** Incremental Build of configuration Debug for project RGBLed ****
-make -j3 all 
-arm-none-eabi-gcc "../Core/Src/kamami_l496_led_rgb.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L496xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/kamami_l496_led_rgb.d" -MT"Core/Src/kamami_l496_led_rgb.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/kamami_l496_led_rgb.o"
-arm-none-eabi-gcc "../Core/Src/stm32l4xx_it.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L496xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/stm32l4xx_it.d" -MT"Core/Src/stm32l4xx_it.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32l4xx_it.o"
-../Core/Src/kamami_l496_led_rgb.c: In function 'MX_TIM4_Init':
-../Core/Src/kamami_l496_led_rgb.c:123:5: warning: implicit declaration of function '_Error_Handler' [-Wimplicit-function-declaration]
-  123 |     _Error_Handler(__FILE__, __LINE__);
-      |     ^~~~~~~~~~~~~~
-arm-none-eabi-gcc -o "RGBLed.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/adamludwiczak/SystemyWbudowane/RGBLed/STM32L496ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="RGBLed.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: RGBLed.elf
- 
-arm-none-eabi-size   RGBLed.elf 
-arm-none-eabi-objdump -h -S  RGBLed.elf  > "RGBLed.list"
-   text	   data	    bss	    dec	    hex	filename
-  11752	     24	   1680	  13456	   3490	RGBLed.elf
-Finished building: default.size.stdout
- 
-Finished building: RGBLed.list
- 
-17:50:38 **** Incremental Build of configuration Debug for project RGBLed ****
-make -j3 all 
-arm-none-eabi-gcc "../Core/Src/kamami_l496_led_rgb.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L496xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/kamami_l496_led_rgb.d" -MT"Core/Src/kamami_l496_led_rgb.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/kamami_l496_led_rgb.o"
-../Core/Src/kamami_l496_led_rgb.c: In function 'MX_TIM4_Init':
-../Core/Src/kamami_l496_led_rgb.c:123:5: warning: implicit declaration of function '_Error_Handler' [-Wimplicit-function-declaration]
-  123 |     _Error_Handler(__FILE__, __LINE__);
-      |     ^~~~~~~~~~~~~~
-arm-none-eabi-gcc -o "RGBLed.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/adamludwiczak/SystemyWbudowane/RGBLed/STM32L496ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="RGBLed.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: RGBLed.elf
- 
-arm-none-eabi-size   RGBLed.elf 
-arm-none-eabi-objdump -h -S  RGBLed.elf  > "RGBLed.list"
-   text	   data	    bss	    dec	    hex	filename
-  11752	     24	   1680	  13456	   3490	RGBLed.elf
-Finished building: default.size.stdout
- 
-Finished building: RGBLed.list
+Finished building: Zegar.list
  

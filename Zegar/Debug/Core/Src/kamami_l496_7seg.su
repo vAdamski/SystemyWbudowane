@@ -1,0 +1,6 @@
+../Core/Src/kamami_l496_7seg.c:58:6:dis7seg_init	48	static
+../Core/Src/kamami_l496_7seg.c:101:9:dis7seg_display	16	static
+../Core/Src/kamami_l496_7seg.c:115:9:dis7seg_display_fixed_point	16	static
+../Core/Src/kamami_l496_7seg.c:131:20:dis7seg_mpx	8	static
+../Core/Src/kamami_l496_7seg.c:142:6:TIM2_IRQHandler	8	static
+../Core/Src/kamami_l496_7seg.c:149:13:MX_TIM2_Init	40	static

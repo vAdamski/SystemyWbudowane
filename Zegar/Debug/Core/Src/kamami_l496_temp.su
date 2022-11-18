@@ -1,0 +1,4 @@
+../Core/Src/kamami_l496_temp.c:26:6:temp_lm75_init	176	static
+../Core/Src/kamami_l496_temp.c:66:16:read_8b_reg	40	static
+../Core/Src/kamami_l496_temp.c:75:8:temp_lm75_read	8	static
+../Core/Src/kamami_l496_temp.c:81:13:MX_I2C1_Init	8	static

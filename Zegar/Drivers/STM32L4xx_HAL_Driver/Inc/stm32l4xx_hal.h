@@ -2,24 +2,43 @@
   ******************************************************************************
   * @file    stm32l4xx_hal.h
   * @author  MCD Application Team
+  * @version V1.7.2
+  * @date    16-June-2017
   * @brief   This file contains all the functions prototypes for the HAL
   *          module driver.
   ******************************************************************************
   * @attention
   *
-  * Copyright (c) 2017 STMicroelectronics.
-  * All rights reserved.
+  * <h2><center>&copy; COPYRIGHT(c) 2017 STMicroelectronics</center></h2>
   *
-  * This software is licensed under terms that can be found in the LICENSE file
-  * in the root directory of this software component.
-  * If no LICENSE file comes with this software, it is provided AS-IS.
+  * Redistribution and use in source and binary forms, with or without modification,
+  * are permitted provided that the following conditions are met:
+  *   1. Redistributions of source code must retain the above copyright notice,
+  *      this list of conditions and the following disclaimer.
+  *   2. Redistributions in binary form must reproduce the above copyright notice,
+  *      this list of conditions and the following disclaimer in the documentation
+  *      and/or other materials provided with the distribution.
+  *   3. Neither the name of STMicroelectronics nor the names of its contributors
+  *      may be used to endorse or promote products derived from this software
+  *      without specific prior written permission.
+  *
+  * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+  * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+  * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+  * DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
+  * FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+  * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+  * SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+  * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+  * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
   *
   ******************************************************************************
   */
 
 /* Define to prevent recursive inclusion -------------------------------------*/
-#ifndef STM32L4xx_HAL_H
-#define STM32L4xx_HAL_H
+#ifndef __STM32L4xx_HAL_H
+#define __STM32L4xx_HAL_H
 
 #ifdef __cplusplus
  extern "C" {
@@ -37,34 +56,7 @@
   */
 
 /* Exported types ------------------------------------------------------------*/
-/** @defgroup HAL_Exported_Types HAL Exported Types
-  * @{
-  */
-
-/** @defgroup HAL_TICK_FREQ Tick Frequency
-  * @{
-  */
-typedef enum
-{
-  HAL_TICK_FREQ_10HZ         = 100U,
-  HAL_TICK_FREQ_100HZ        = 10U,
-  HAL_TICK_FREQ_1KHZ         = 1U,
-  HAL_TICK_FREQ_DEFAULT      = HAL_TICK_FREQ_1KHZ
-} HAL_TickFreqTypeDef;
-/**
-  * @}
-  */
-
-/**
-  * @}
-  */
-
 /* Exported constants --------------------------------------------------------*/
-
-/** @defgroup HAL_Exported_Constants HAL Exported Constants
-  * @{
-  */
-
 /** @defgroup SYSCFG_Exported_Constants SYSCFG Exported Constants
   * @{
   */
@@ -72,27 +64,18 @@ typedef enum
 /** @defgroup SYSCFG_BootMode Boot Mode
   * @{
   */
-#define SYSCFG_BOOT_MAINFLASH          0U
+#define SYSCFG_BOOT_MAINFLASH          ((uint32_t)0x00000000)
 #define SYSCFG_BOOT_SYSTEMFLASH        SYSCFG_MEMRMP_MEM_MODE_0
 
 #if defined (STM32L471xx) || defined (STM32L475xx) || defined (STM32L476xx) || defined (STM32L485xx) || defined (STM32L486xx) || \
-    defined (STM32L496xx) || defined (STM32L4A6xx) || \
-    defined (STM32L4P5xx) || defined (STM32L4Q5xx) || \
-    defined (STM32L4R5xx) || defined (STM32L4R7xx) || defined (STM32L4R9xx) || defined (STM32L4S5xx) || defined (STM32L4S7xx) || defined (STM32L4S9xx)
+    defined (STM32L496xx) || defined (STM32L4A6xx)
 #define SYSCFG_BOOT_FMC                SYSCFG_MEMRMP_MEM_MODE_1
 #endif /* STM32L471xx || STM32L475xx || STM32L476xx || STM32L485xx || STM32L486xx || */
-       /* STM32L496xx || STM32L4A6xx || */
-       /* STM32L4P5xx || STM32L4Q5xx || */
-       /* STM32L4R5xx || STM32L4R7xx || STM32L4R9xx || STM32L4S5xx || STM32L4S7xx || STM32L4S9xx */
-
+       /* STM32L496xx || STM32L4A6xx */
+      
 #define SYSCFG_BOOT_SRAM               (SYSCFG_MEMRMP_MEM_MODE_1 | SYSCFG_MEMRMP_MEM_MODE_0)
 
-#if defined (STM32L4P5xx) || defined (STM32L4Q5xx) || defined (STM32L4R5xx) || defined (STM32L4R7xx) || defined (STM32L4R9xx) || defined (STM32L4S5xx) || defined (STM32L4S7xx) || defined (STM32L4S9xx)
-#define SYSCFG_BOOT_OCTOPSPI1          (SYSCFG_MEMRMP_MEM_MODE_2)
-#define SYSCFG_BOOT_OCTOPSPI2          (SYSCFG_MEMRMP_MEM_MODE_2 | SYSCFG_MEMRMP_MEM_MODE_0)
-#else
 #define SYSCFG_BOOT_QUADSPI            (SYSCFG_MEMRMP_MEM_MODE_2 | SYSCFG_MEMRMP_MEM_MODE_1)
-#endif /* STM32L4P5xx || STM32L4Q5xx || STM32L4R5xx || STM32L4R7xx || STM32L4R9xx || STM32L4S5xx || STM32L4S7xx || STM32L4S9xx */
 
 /**
   * @}
@@ -200,8 +183,8 @@ typedef enum
 /** @defgroup SYSCFG_VREFBUF_VoltageScale VREFBUF Voltage Scale
   * @{
   */
-#define SYSCFG_VREFBUF_VOLTAGE_SCALE0  0U               /*!< Voltage reference scale 0 (VREF_OUT1) */
-#define SYSCFG_VREFBUF_VOLTAGE_SCALE1  VREFBUF_CSR_VRS  /*!< Voltage reference scale 1 (VREF_OUT2) */
+#define SYSCFG_VREFBUF_VOLTAGE_SCALE0  ((uint32_t)0x00000000) /*!< Voltage reference scale 0 (VREF_OUT1) */
+#define SYSCFG_VREFBUF_VOLTAGE_SCALE1  VREFBUF_CSR_VRS        /*!< Voltage reference scale 1 (VREF_OUT2) */
 
 /**
   * @}
@@ -210,8 +193,8 @@ typedef enum
 /** @defgroup SYSCFG_VREFBUF_HighImpedance VREFBUF High Impedance
   * @{
   */
-#define SYSCFG_VREFBUF_HIGH_IMPEDANCE_DISABLE  0U               /*!< VREF_plus pin is internally connected to Voltage reference buffer output */
-#define SYSCFG_VREFBUF_HIGH_IMPEDANCE_ENABLE   VREFBUF_CSR_HIZ  /*!< VREF_plus pin is high impedance */
+#define SYSCFG_VREFBUF_HIGH_IMPEDANCE_DISABLE  ((uint32_t)0x00000000) /*!< VREF_plus pin is internally connected to Voltage reference buffer output */
+#define SYSCFG_VREFBUF_HIGH_IMPEDANCE_ENABLE   VREFBUF_CSR_HIZ        /*!< VREF_plus pin is high impedance */
 
 /**
   * @}
@@ -234,7 +217,7 @@ typedef enum
   */
 
 /** @brief  Fast-mode Plus driving capability on a specific GPIO
-  */
+  */  
 #define SYSCFG_FASTMODEPLUS_PB6        SYSCFG_CFGR1_I2C_PB6_FMP  /*!< Enable Fast-mode Plus on PB6 */
 #define SYSCFG_FASTMODEPLUS_PB7        SYSCFG_CFGR1_I2C_PB7_FMP  /*!< Enable Fast-mode Plus on PB7 */
 #if defined(SYSCFG_CFGR1_I2C_PB8_FMP)
@@ -252,14 +235,7 @@ typedef enum
   * @}
   */
 
-/**
-  * @}
-  */
-
 /* Exported macros -----------------------------------------------------------*/
-/** @defgroup HAL_Exported_Macros HAL Exported Macros
-  * @{
-  */
 
 /** @defgroup DBGMCU_Exported_Macros DBGMCU Exported Macros
   * @{
@@ -398,33 +374,18 @@ typedef enum
 #define __HAL_SYSCFG_REMAPMEMORY_SRAM()        MODIFY_REG(SYSCFG->MEMRMP, SYSCFG_MEMRMP_MEM_MODE, (SYSCFG_MEMRMP_MEM_MODE_1|SYSCFG_MEMRMP_MEM_MODE_0))
 
 #if defined (STM32L471xx) || defined (STM32L475xx) || defined (STM32L476xx) || defined (STM32L485xx) || defined (STM32L486xx) || \
-    defined (STM32L496xx) || defined (STM32L4A6xx) || \
-    defined (STM32L4P5xx) || defined (STM32L4Q5xx) || \
-    defined (STM32L4R5xx) || defined (STM32L4R7xx) || defined (STM32L4R9xx) || defined (STM32L4S5xx) || defined (STM32L4S7xx) || defined (STM32L4S9xx)
+    defined (STM32L496xx) || defined (STM32L4A6xx)
 
 /** @brief  FMC Bank1 (NOR/PSRAM 1 and 2) mapped at 0x00000000.
   */
 #define __HAL_SYSCFG_REMAPMEMORY_FMC()         MODIFY_REG(SYSCFG->MEMRMP, SYSCFG_MEMRMP_MEM_MODE, SYSCFG_MEMRMP_MEM_MODE_1)
 
 #endif /* STM32L471xx || STM32L475xx || STM32L476xx || STM32L485xx || STM32L486xx || */
-       /* STM32L496xx || STM32L4A6xx || */
-       /* STM32L4P5xx || STM32L4Q5xx || */
-       /* STM32L4R5xx || STM32L4R7xx || STM32L4R9xx || STM32L4S5xx || STM32L4S7xx || STM32L4S9xx */
-
-#if defined (STM32L4P5xx) || defined (STM32L4Q5xx) || defined (STM32L4R5xx) || defined (STM32L4R7xx) || defined (STM32L4R9xx) || defined (STM32L4S5xx) || defined (STM32L4S7xx) || defined (STM32L4S9xx)
-
-/** @brief  OCTOSPI mapped at 0x00000000.
-  */
-#define __HAL_SYSCFG_REMAPMEMORY_OCTOSPI1()    MODIFY_REG(SYSCFG->MEMRMP, SYSCFG_MEMRMP_MEM_MODE, (SYSCFG_MEMRMP_MEM_MODE_2))
-#define __HAL_SYSCFG_REMAPMEMORY_OCTOSPI2()    MODIFY_REG(SYSCFG->MEMRMP, SYSCFG_MEMRMP_MEM_MODE, (SYSCFG_MEMRMP_MEM_MODE_2|SYSCFG_MEMRMP_MEM_MODE_0))
-
-#else
+       /* STM32L496xx || STM32L4A6xx */
 
 /** @brief  QUADSPI mapped at 0x00000000.
   */
 #define __HAL_SYSCFG_REMAPMEMORY_QUADSPI()     MODIFY_REG(SYSCFG->MEMRMP, SYSCFG_MEMRMP_MEM_MODE, (SYSCFG_MEMRMP_MEM_MODE_2|SYSCFG_MEMRMP_MEM_MODE_1))
-
-#endif /* STM32L4P5xx || STM32L4Q5xx || STM32L4R5xx || STM32L4R7xx || STM32L4R9xx || STM32L4S5xx || STM32L4S7xx || STM32L4S9xx */
 
 /**
   * @brief  Return the boot mode as configured by user.
@@ -436,18 +397,7 @@ typedef enum
   *           @arg @ref SYSCFG_BOOT_FMC
   @endif
   *           @arg @ref SYSCFG_BOOT_SRAM
-  @if STM32L422xx
   *           @arg @ref SYSCFG_BOOT_QUADSPI
-  @endif
-  @if STM32L443xx
-  *           @arg @ref SYSCFG_BOOT_QUADSPI
-  @endif
-  @if STM32L462xx
-  *           @arg @ref SYSCFG_BOOT_QUADSPI
-  @endif
-  @if STM32L486xx
-  *           @arg @ref SYSCFG_BOOT_QUADSPI
-  @endif
   */
 #define __HAL_SYSCFG_GET_BOOT_MODE()           READ_BIT(SYSCFG->MEMRMP, SYSCFG_MEMRMP_MEM_MODE)
 
@@ -456,8 +406,8 @@ typedef enum
   * @note   Write protection can only be disabled by a system reset
   */
 #define __HAL_SYSCFG_SRAM2_WRP_1_31_ENABLE(__SRAM2WRP__)    do {assert_param(IS_SYSCFG_SRAM2WRP_PAGE((__SRAM2WRP__)));\
-                                                                SET_BIT(SYSCFG->SWPR, (__SRAM2WRP__));\
-                                                            }while(0)
+                                                         SET_BIT(SYSCFG->SWPR, (__SRAM2WRP__));\
+                                                        }while(0)
 
 #if defined(SYSCFG_SWPR2_PAGE63)
 /** @brief  SRAM2 page 32 to 63 write protection enable macro
@@ -482,7 +432,7 @@ typedef enum
 #define __HAL_SYSCFG_SRAM2_ERASE()           SET_BIT(SYSCFG->SCSR, SYSCFG_SCSR_SRAM2ER)
 
 /** @brief  Floating Point Unit interrupt enable/disable macros
-  * @param __INTERRUPT__  This parameter can be a value of @ref SYSCFG_FPU_Interrupts
+  * @param __INTERRUPT__: This parameter can be a value of @ref SYSCFG_FPU_Interrupts
   */
 #define __HAL_SYSCFG_FPU_INTERRUPT_ENABLE(__INTERRUPT__)    do {assert_param(IS_SYSCFG_FPU_INTERRUPT((__INTERRUPT__)));\
                                                                 SET_BIT(SYSCFG->CFGR1, (__INTERRUPT__));\
@@ -517,22 +467,22 @@ typedef enum
 #define __HAL_SYSCFG_BREAK_SRAM2PARITY_LOCK()  SET_BIT(SYSCFG->CFGR2, SYSCFG_CFGR2_SPL)
 
 /** @brief  Check SYSCFG flag is set or not.
-  * @param  __FLAG__  specifies the flag to check.
+  * @param  __FLAG__: specifies the flag to check.
   *         This parameter can be one of the following values:
   *            @arg @ref SYSCFG_FLAG_SRAM2_PE   SRAM2 Parity Error Flag
   *            @arg @ref SYSCFG_FLAG_SRAM2_BUSY SRAM2 Erase Ongoing
   * @retval The new state of __FLAG__ (TRUE or FALSE).
   */
-#define __HAL_SYSCFG_GET_FLAG(__FLAG__)      ((((((__FLAG__) == SYSCFG_SCSR_SRAM2BSY)? SYSCFG->SCSR : SYSCFG->CFGR2) & (__FLAG__))!= 0U) ? 1U : 0U)
+#define __HAL_SYSCFG_GET_FLAG(__FLAG__)      ((((((__FLAG__) == SYSCFG_SCSR_SRAM2BSY)? SYSCFG->SCSR : SYSCFG->CFGR2) & (__FLAG__))!= 0) ? 1 : 0)
 
 /** @brief  Set the SPF bit to clear the SRAM Parity Error Flag.
   */
 #define __HAL_SYSCFG_CLEAR_FLAG()            SET_BIT(SYSCFG->CFGR2, SYSCFG_CFGR2_SPF)
 
 /** @brief  Fast-mode Plus driving capability enable/disable macros
-  * @param __FASTMODEPLUS__  This parameter can be a value of :
+  * @param __FASTMODEPLUS__: This parameter can be a value of : 
   *     @arg @ref SYSCFG_FASTMODEPLUS_PB6 Fast-mode Plus driving capability activation on PB6
-  *     @arg @ref SYSCFG_FASTMODEPLUS_PB7 Fast-mode Plus driving capability activation on PB7
+  *     @arg @ref SYSCFG_FASTMODEPLUS_PB7 Fast-mode Plus driving capability activation on PB7 
   *     @arg @ref SYSCFG_FASTMODEPLUS_PB8 Fast-mode Plus driving capability activation on PB8
   *     @arg @ref SYSCFG_FASTMODEPLUS_PB9 Fast-mode Plus driving capability activation on PB9
   */
@@ -548,15 +498,7 @@ typedef enum
   * @}
   */
 
-/**
-  * @}
-  */
-
 /* Private macros ------------------------------------------------------------*/
-/** @defgroup HAL_Private_Macros HAL Private Macros
-  * @{
-  */
-
 /** @defgroup SYSCFG_Private_Macros SYSCFG Private Macros
   * @{
   */
@@ -573,7 +515,7 @@ typedef enum
                                             ((__CONFIG__) == SYSCFG_BREAK_SRAM2_PARITY)  || \
                                             ((__CONFIG__) == SYSCFG_BREAK_LOCKUP))
 
-#define IS_SYSCFG_SRAM2WRP_PAGE(__PAGE__)   (((__PAGE__) > 0U) && ((__PAGE__) <= 0xFFFFFFFFUL))
+#define IS_SYSCFG_SRAM2WRP_PAGE(__PAGE__)   (((__PAGE__) > 0) && ((__PAGE__) <= 0xFFFFFFFF))
 
 #if defined(VREFBUF)
 #define IS_SYSCFG_VREFBUF_VOLTAGE_SCALE(__SCALE__)  (((__SCALE__) == SYSCFG_VREFBUF_VOLTAGE_SCALE0) || \
@@ -582,7 +524,7 @@ typedef enum
 #define IS_SYSCFG_VREFBUF_HIGH_IMPEDANCE(__VALUE__)  (((__VALUE__) == SYSCFG_VREFBUF_HIGH_IMPEDANCE_DISABLE) || \
                                                       ((__VALUE__) == SYSCFG_VREFBUF_HIGH_IMPEDANCE_ENABLE))
 
-#define IS_SYSCFG_VREFBUF_TRIMMING(__VALUE__)  (((__VALUE__) > 0U) && ((__VALUE__) <= VREFBUF_CCR_TRIM))
+#define IS_SYSCFG_VREFBUF_TRIMMING(__VALUE__)  (((__VALUE__) > 0) && ((__VALUE__) <= VREFBUF_CCR_TRIM))
 #endif /* VREFBUF */
 
 #if defined(SYSCFG_FASTMODEPLUS_PB8) && defined(SYSCFG_FASTMODEPLUS_PB9)
@@ -606,22 +548,6 @@ typedef enum
   * @}
   */
 
-/**
-  * @}
-  */
-
-/* Exported variables --------------------------------------------------------*/
-
-/** @addtogroup HAL_Exported_Variables
-  * @{
-  */
-extern __IO uint32_t uwTick;
-extern uint32_t uwTickPrio;
-extern HAL_TickFreqTypeDef uwTickFreq;
-/**
-  * @}
-  */
-
 /* Exported functions --------------------------------------------------------*/
 
 /** @addtogroup HAL_Exported_Functions
@@ -635,8 +561,8 @@ extern HAL_TickFreqTypeDef uwTickFreq;
 /* Initialization and de-initialization functions  ******************************/
 HAL_StatusTypeDef HAL_Init(void);
 HAL_StatusTypeDef HAL_DeInit(void);
-void              HAL_MspInit(void);
-void              HAL_MspDeInit(void);
+void HAL_MspInit(void);
+void HAL_MspDeInit(void);
 HAL_StatusTypeDef HAL_InitTick (uint32_t TickPriority);
 
 /**
@@ -648,20 +574,17 @@ HAL_StatusTypeDef HAL_InitTick (uint32_t TickPriority);
   */
 
 /* Peripheral Control functions  ************************************************/
-void               HAL_IncTick(void);
-void               HAL_Delay(uint32_t Delay);
-uint32_t           HAL_GetTick(void);
-uint32_t           HAL_GetTickPrio(void);
-HAL_StatusTypeDef  HAL_SetTickFreq(HAL_TickFreqTypeDef Freq);
-HAL_TickFreqTypeDef HAL_GetTickFreq(void);
-void               HAL_SuspendTick(void);
-void               HAL_ResumeTick(void);
-uint32_t           HAL_GetHalVersion(void);
-uint32_t           HAL_GetREVID(void);
-uint32_t           HAL_GetDEVID(void);
-uint32_t           HAL_GetUIDw0(void);
-uint32_t           HAL_GetUIDw1(void);
-uint32_t           HAL_GetUIDw2(void);
+void HAL_IncTick(void);
+void HAL_Delay(uint32_t Delay);
+uint32_t HAL_GetTick(void);
+void HAL_SuspendTick(void);
+void HAL_ResumeTick(void);
+uint32_t HAL_GetHalVersion(void);
+uint32_t HAL_GetREVID(void);
+uint32_t HAL_GetDEVID(void);
+uint32_t HAL_GetUIDw0(void);
+uint32_t HAL_GetUIDw1(void);
+uint32_t HAL_GetUIDw2(void);
 
 /**
   * @}
@@ -672,12 +595,12 @@ uint32_t           HAL_GetUIDw2(void);
   */
 
 /* DBGMCU Peripheral Control functions  *****************************************/
-void              HAL_DBGMCU_EnableDBGSleepMode(void);
-void              HAL_DBGMCU_DisableDBGSleepMode(void);
-void              HAL_DBGMCU_EnableDBGStopMode(void);
-void              HAL_DBGMCU_DisableDBGStopMode(void);
-void              HAL_DBGMCU_EnableDBGStandbyMode(void);
-void              HAL_DBGMCU_DisableDBGStandbyMode(void);
+void HAL_DBGMCU_EnableDBGSleepMode(void);
+void HAL_DBGMCU_DisableDBGSleepMode(void);
+void HAL_DBGMCU_EnableDBGStopMode(void);
+void HAL_DBGMCU_DisableDBGStopMode(void);
+void HAL_DBGMCU_EnableDBGStandbyMode(void);
+void HAL_DBGMCU_DisableDBGStandbyMode(void);
 
 /**
   * @}
@@ -688,20 +611,20 @@ void              HAL_DBGMCU_DisableDBGStandbyMode(void);
   */
 
 /* SYSCFG Control functions  ****************************************************/
-void              HAL_SYSCFG_SRAM2Erase(void);
-void              HAL_SYSCFG_EnableMemorySwappingBank(void);
-void              HAL_SYSCFG_DisableMemorySwappingBank(void);
+void HAL_SYSCFG_SRAM2Erase(void);
+void HAL_SYSCFG_EnableMemorySwappingBank(void);
+void HAL_SYSCFG_DisableMemorySwappingBank(void);
 
 #if defined(VREFBUF)
-void              HAL_SYSCFG_VREFBUF_VoltageScalingConfig(uint32_t VoltageScaling);
-void              HAL_SYSCFG_VREFBUF_HighImpedanceConfig(uint32_t Mode);
-void              HAL_SYSCFG_VREFBUF_TrimmingConfig(uint32_t TrimmingValue);
+void HAL_SYSCFG_VREFBUF_VoltageScalingConfig(uint32_t VoltageScaling);
+void HAL_SYSCFG_VREFBUF_HighImpedanceConfig(uint32_t Mode);
+void HAL_SYSCFG_VREFBUF_TrimmingConfig(uint32_t TrimmingValue);
 HAL_StatusTypeDef HAL_SYSCFG_EnableVREFBUF(void);
-void              HAL_SYSCFG_DisableVREFBUF(void);
+void HAL_SYSCFG_DisableVREFBUF(void);
 #endif /* VREFBUF */
 
-void              HAL_SYSCFG_EnableIOAnalogSwitchBooster(void);
-void              HAL_SYSCFG_DisableIOAnalogSwitchBooster(void);
+void HAL_SYSCFG_EnableIOAnalogSwitchBooster(void);
+void HAL_SYSCFG_DisableIOAnalogSwitchBooster(void);
 
 /**
   * @}
@@ -723,4 +646,6 @@ void              HAL_SYSCFG_DisableIOAnalogSwitchBooster(void);
 }
 #endif
 
-#endif /* STM32L4xx_HAL_H */
+#endif /* __STM32L4xx_HAL_H */
+
+/************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/

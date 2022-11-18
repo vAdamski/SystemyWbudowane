@@ -2,23 +2,42 @@
   ******************************************************************************
   * @file    stm32l4xx_hal_cortex.h
   * @author  MCD Application Team
+  * @version V1.7.2
+  * @date    16-June-2017
   * @brief   Header file of CORTEX HAL module.
   ******************************************************************************
   * @attention
   *
-  * Copyright (c) 2017 STMicroelectronics.
-  * All rights reserved.
+  * <h2><center>&copy; COPYRIGHT(c) 2017 STMicroelectronics</center></h2>
   *
-  * This software is licensed under terms that can be found in the LICENSE file in
-  * the root directory of this software component.
-  * If no LICENSE file comes with this software, it is provided AS-IS.
+  * Redistribution and use in source and binary forms, with or without modification,
+  * are permitted provided that the following conditions are met:
+  *   1. Redistributions of source code must retain the above copyright notice,
+  *      this list of conditions and the following disclaimer.
+  *   2. Redistributions in binary form must reproduce the above copyright notice,
+  *      this list of conditions and the following disclaimer in the documentation
+  *      and/or other materials provided with the distribution.
+  *   3. Neither the name of STMicroelectronics nor the names of its contributors
+  *      may be used to endorse or promote products derived from this software
+  *      without specific prior written permission.
+  *
+  * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+  * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+  * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+  * DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
+  * FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+  * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+  * SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+  * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+  * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
   *
   ******************************************************************************
   */
 
 /* Define to prevent recursive inclusion -------------------------------------*/
-#ifndef STM32L4xx_HAL_CORTEX_H
-#define STM32L4xx_HAL_CORTEX_H
+#ifndef __STM32L4xx_HAL_CORTEX_H
+#define __STM32L4xx_HAL_CORTEX_H
 
 #ifdef __cplusplus
  extern "C" {
@@ -32,7 +51,6 @@
   */
 
 /** @defgroup CORTEX CORTEX
-  * @brief CORTEX HAL module driver
   * @{
   */
 
@@ -43,7 +61,6 @@
 
 #if (__MPU_PRESENT == 1)
 /** @defgroup CORTEX_MPU_Region_Initialization_Structure_definition MPU Region Initialization Structure Definition
-  * @brief  MPU Region initialization structure 
   * @{
   */
 typedef struct
@@ -105,9 +122,8 @@ typedef struct
 /** @defgroup CORTEX_SysTick_clock_source CORTEX SysTick clock source
   * @{
   */
-#define SYSTICK_CLKSOURCE_HCLK_DIV8       0x00000000U
-#define SYSTICK_CLKSOURCE_HCLK            0x00000004U
-
+#define SYSTICK_CLKSOURCE_HCLK_DIV8    ((uint32_t)0x00000000)
+#define SYSTICK_CLKSOURCE_HCLK         ((uint32_t)0x00000004)
 /**
   * @}
   */
@@ -116,10 +132,10 @@ typedef struct
 /** @defgroup CORTEX_MPU_HFNMI_PRIVDEF_Control CORTEX MPU HFNMI and PRIVILEGED Access control
   * @{
   */
-#define  MPU_HFNMI_PRIVDEF_NONE           0x00000000U
-#define  MPU_HARDFAULT_NMI                (MPU_CTRL_HFNMIENA_Msk)
-#define  MPU_PRIVILEGED_DEFAULT           (MPU_CTRL_PRIVDEFENA_Msk)
-#define  MPU_HFNMI_PRIVDEF                (MPU_CTRL_HFNMIENA_Msk | MPU_CTRL_PRIVDEFENA_Msk)
+#define  MPU_HFNMI_PRIVDEF_NONE      ((uint32_t)0x00000000)
+#define  MPU_HARDFAULT_NMI           ((uint32_t)0x00000002)
+#define  MPU_PRIVILEGED_DEFAULT      ((uint32_t)0x00000004)
+#define  MPU_HFNMI_PRIVDEF           ((uint32_t)0x00000006)
 /**
   * @}
   */
@@ -175,7 +191,6 @@ typedef struct
 #define  MPU_TEX_LEVEL0              ((uint8_t)0x00)
 #define  MPU_TEX_LEVEL1              ((uint8_t)0x01)
 #define  MPU_TEX_LEVEL2              ((uint8_t)0x02)
-#define  MPU_TEX_LEVEL4              ((uint8_t)0x04)
 /**
   * @}
   */
@@ -274,6 +289,40 @@ void HAL_NVIC_DisableIRQ(IRQn_Type IRQn);
 void HAL_NVIC_SystemReset(void);
 uint32_t HAL_SYSTICK_Config(uint32_t TicksNumb);
 
+#if (__MPU_PRESENT == 1)
+/**
+  * @brief  Disable the MPU.
+  * @retval None
+  */
+__STATIC_INLINE void HAL_MPU_Disable(void)
+{
+  /* Disable fault exceptions */
+  SCB->SHCSR &= ~SCB_SHCSR_MEMFAULTENA_Msk;
+  
+  /* Disable the MPU */
+  MPU->CTRL  &= ~MPU_CTRL_ENABLE_Msk;
+}
+
+/**
+  * @brief  Enable the MPU.
+  * @param  MPU_Control: Specifies the control mode of the MPU during hard fault, 
+  *          NMI, FAULTMASK and privileged accessto the default memory 
+  *          This parameter can be one of the following values:
+  *            @arg MPU_HFNMI_PRIVDEF_NONE
+  *            @arg MPU_HARDFAULT_NMI
+  *            @arg MPU_PRIVILEGED_DEFAULT
+  *            @arg MPU_HFNMI_PRIVDEF
+  * @retval None
+  */
+__STATIC_INLINE void HAL_MPU_Enable(uint32_t MPU_Control)
+{
+  /* Enable the MPU */
+  MPU->CTRL   = MPU_Control | MPU_CTRL_ENABLE_Msk;
+  
+  /* Enable fault exceptions */
+  SCB->SHCSR |= SCB_SHCSR_MEMFAULTENA_Msk;
+}
+#endif /* __MPU_PRESENT */
 /**
   * @}
   */
@@ -294,8 +343,6 @@ void HAL_SYSTICK_IRQHandler(void);
 void HAL_SYSTICK_Callback(void);
 
 #if (__MPU_PRESENT == 1)
-void HAL_MPU_Enable(uint32_t MPU_Control);
-void HAL_MPU_Disable(void);
 void HAL_MPU_ConfigRegion(MPU_Region_InitTypeDef *MPU_Init);
 #endif /* __MPU_PRESENT */
 /**
@@ -346,8 +393,7 @@ void HAL_MPU_ConfigRegion(MPU_Region_InitTypeDef *MPU_Init);
 
 #define IS_MPU_TEX_LEVEL(TYPE) (((TYPE) == MPU_TEX_LEVEL0)  || \
                                 ((TYPE) == MPU_TEX_LEVEL1)  || \
-                                ((TYPE) == MPU_TEX_LEVEL2)  || \
-                                ((TYPE) == MPU_TEX_LEVEL4))
+                                ((TYPE) == MPU_TEX_LEVEL2))
 
 #define IS_MPU_REGION_PERMISSION_ATTRIBUTE(TYPE) (((TYPE) == MPU_REGION_NO_ACCESS)   || \
                                                   ((TYPE) == MPU_REGION_PRIV_RW)     || \
@@ -415,6 +461,7 @@ void HAL_MPU_ConfigRegion(MPU_Region_InitTypeDef *MPU_Init);
 }
 #endif
 
-#endif /* STM32L4xx_HAL_CORTEX_H */
+#endif /* __STM32L4xx_HAL_CORTEX_H */
 
 
+/************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/
