@@ -175,9 +175,9 @@ void SysTick_Handler(void)
 	/* USER CODE BEGIN SysTick_IRQn 1 */
 	static uint16_t mode = 0;
 	static uint16_t interrupt = 0;
-	static uint16_t hh=0;
-	static uint16_t mm=0;
-	static uint16_t ss=0;
+	static uint16_t hh=23;
+	static uint16_t mm=59;
+	static uint16_t ss=30;
 	static uint16_t peakSS = 0;
 
 	if(++interrupt == 1000)
@@ -194,11 +194,11 @@ void SysTick_Handler(void)
 
 		if (mode == 0)
 		{
-			dis7seg_displayMMSS(mm, ss, peakSS);
+			dis7seg_displayMMSS(mm, ss);
 		}
 		if (mode == 1)
 		{
-			dis7seg_displayHHMM(hh, mm);
+			dis7seg_displayHHMM(hh, mm, peakSS);
 		}
 
 		ss++;

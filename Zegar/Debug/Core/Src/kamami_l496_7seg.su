@@ -1,8 +1,8 @@
 ../Core/Src/kamami_l496_7seg.c:58:6:dis7seg_init	48	static
 ../Core/Src/kamami_l496_7seg.c:101:9:dis7seg_displayHHMM	16	static
-../Core/Src/kamami_l496_7seg.c:120:9:dis7seg_displayMMSS	16	static
-../Core/Src/kamami_l496_7seg.c:139:9:dis7seg_display	16	static
-../Core/Src/kamami_l496_7seg.c:153:9:dis7seg_display_fixed_point	16	static
-../Core/Src/kamami_l496_7seg.c:169:20:dis7seg_mpx	8	static
-../Core/Src/kamami_l496_7seg.c:180:6:TIM2_IRQHandler	8	static
-../Core/Src/kamami_l496_7seg.c:187:13:MX_TIM2_Init	40	static
+../Core/Src/kamami_l496_7seg.c:127:9:dis7seg_displayMMSS	16	static
+../Core/Src/kamami_l496_7seg.c:144:9:dis7seg_display	16	static
+../Core/Src/kamami_l496_7seg.c:158:9:dis7seg_display_fixed_point	16	static
+../Core/Src/kamami_l496_7seg.c:174:20:dis7seg_mpx	8	static
+../Core/Src/kamami_l496_7seg.c:185:6:TIM2_IRQHandler	8	static
+../Core/Src/kamami_l496_7seg.c:192:13:MX_TIM2_Init	40	static
