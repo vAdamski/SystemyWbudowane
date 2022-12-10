@@ -36,14 +36,15 @@
   ******************************************************************************
   */
 /* Includes ------------------------------------------------------------------*/
+#include <joystick.h>
+//#include <segmenty.h>
 #include "main.h"
 #include "stm32l4xx_hal.h"
+#include "stm32l4xx_it.h"
 
 /* USER CODE BEGIN Includes */
 
 // header files for KAMeLeon peripherals used in this project
-#include "kamami_l496_joy.h"
-#include "kamami_l496_7seg.h"
 
 /* USER CODE END Includes */
 
@@ -88,7 +89,7 @@ int main(void)
 	
 	// initialize KAMeLeon peripherals used in this project
 	joy_init();
-	dis7seg_init();
+
     	
   /* USER CODE END SysInit */
 
